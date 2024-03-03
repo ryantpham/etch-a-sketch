@@ -3,6 +3,7 @@ const resetButton = document.querySelector('.reset');
 const gridSize = document.querySelector('.gridSize');
 const colorFun = document.querySelector('.colorFun');
 const darkenButton = document.querySelector('.darken');
+const eraser = document.querySelector('.eraser');
 
 
 function getRandomColor() {
@@ -58,7 +59,7 @@ gridSize.addEventListener('click', ()=>{
 
 //Color Fun Button
 colorFun.addEventListener('click', ()=>{
-    square.style.backgroundColor = "White";
+
     square.addEventListener('mouseover', ()=>{
         square.style.backgroundColor = getRandomColor();
     });
@@ -66,12 +67,18 @@ colorFun.addEventListener('click', ()=>{
 
 //Darken Square Button
 darkenButton.addEventListener('click', () => {
-    square.style.backgroundColor = "White";
+
     square.addEventListener('mouseover', ()=>{
         square.style.backgroundColor = darkenSquare(square);
     });
 });
 
+//Eraser Button
+eraser.addEventListener('click', ()=>{
+    square.addEventListener('mouseover', ()=>{
+        square.style.backgroundColor = "White";
+    });
+});
 
 };
 
@@ -109,7 +116,7 @@ gridSize.addEventListener('click', ()=>{
 
         //Color Fun Button
         colorFun.addEventListener('click', ()=>{
-            square.style.backgroundColor = "White";
+
             square.addEventListener('mouseover', ()=>{
                 square.style.backgroundColor = getRandomColor();
             });
@@ -117,9 +124,16 @@ gridSize.addEventListener('click', ()=>{
 
         //Darken Square Button
         darkenButton.addEventListener('click', () => {
-            square.style.backgroundColor = "White";
+
             square.addEventListener('mouseover', ()=>{
                 square.style.backgroundColor = darkenSquare(square);
+            });
+        });
+        
+        //Eraser Button
+        eraser.addEventListener('click', ()=>{
+            square.addEventListener('mouseover', ()=>{
+                square.style.backgroundColor = "White";
             });
         });
 
