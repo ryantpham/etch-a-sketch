@@ -2,6 +2,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: #F5E8DD;
 }
 h1 {
     font-size: 80px;
@@ -29,7 +30,8 @@ h1 {
 
 .square{
     background-color:white;
-    border: solid 1px black;
+    border: solid 0.5px black;
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
 }
 
 
@@ -43,11 +45,6 @@ h1 {
     border-radius: 10px;
 }
 
-.container div {
-    flex: 0 0 calc(100% / 16); /* Each square takes up 1/16th of the container's width */
-    height: calc(500px / 16); /* Each square has a height of 1/16th of the container's height */
-    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
-}
 
 /*Button container*/
 .features{
@@ -79,7 +76,7 @@ h1 {
     box-shadow: 0 0 0 2px rgba(0,123,255,.25); /* Adds a subtle focus effect */
 }
 
-/*Reset Button*/
+/*Grid Size Button*/
 .gridSize {
     padding: 10px 20px; /* Adds padding inside the button */
     font-size: 16px; /* Sets the font size */
@@ -100,5 +97,27 @@ h1 {
 .gridSize:focus {
     outline: none; /* Removes the focus outline */
     box-shadow: 0 0 0 2px rgba(0,123,255,.25); /* Adds a subtle focus effect */
+}
+
+.colorFun {
+    padding: 10px 20px; /* Adds padding inside the button */
+    font-size: 16px; /* Sets the font size */
+    font-family: 'Arial', sans-serif; /* Chooses a font */
+    color: white; /* Sets the text color */
+    background-color: #28a745; /* Sets a green background color */
+    border: none; /* Removes the default border */
+    border-radius: 5px; /* Rounds the corners of the button */
+    cursor: pointer; /* Changes the cursor to a pointer when hovering over the button */
+    transition: background-color 0.3s ease; /* Smooth background color transition for hover effect */
+}
+
+.colorFun:hover {
+    background-color: #218838; /* Darkens the button on hover for a visual effect */
+    color: #fff; /* Ensures text color remains white on hover */
+}
+
+.colorFun:focus {
+    outline: none; /* Removes the focus outline */
+    box-shadow: 0 0 0 2px rgba(40,167,69,.5); /* Adds a subtle focus effect with a green glow */
 }
 
