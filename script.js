@@ -8,6 +8,7 @@ const square = document.createElement('div')
 square.classList.add('square');
 sketchPad.appendChild(square);
 
+//Primary Color
 square.addEventListener('mouseover',()=>{
     square.style.backgroundColor = "Gray";
 })
