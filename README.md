@@ -1,5 +1,5 @@
 # Etch-A-Sketch
-
+https://ryantpham.github.io/etch-a-sketch/ 
 ## Introduction
 
 Hello there! I'm excited to share my latest project, Etch-A-Sketch, with you. It's a fun, interactive tool that I built to really push my DOM manipulation skills. This project is a blend of a sketchpad and an Etch-A-Sketch, designed entirely for the web browser. I faced quite a few challenges while building it, and I learned a ton about JavaScript, CSS, and HTML along the way.
