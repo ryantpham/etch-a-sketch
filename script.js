@@ -1,7 +1,9 @@
 const sketchPad = document.querySelector('.container');
 const resetButton = document.querySelector('.reset');
 const gridSize = document.querySelector('.gridSize');
-const colorFun = document.querySelector('.colorFun')
+const colorFun = document.querySelector('.colorFun');
+const darkenButton = document.querySelector('.darken');
+
 
 function getRandomColor() {
     const red = Math.floor(Math.random() * 256); // Random number between 0-255
@@ -12,6 +14,17 @@ function getRandomColor() {
     return `rgb(${red}, ${green}, ${blue})`;
 }
 
+function darkenSquare(square) {
+    if (!square.interactionCount) {
+        square.interactionCount = 0;
+    }
+    if (square.interactionCount < 10) {
+        square.interactionCount++;
+        // Progressive darkening: reduce lightness by 10% each interaction
+        let darkness = square.interactionCount * 10;
+        square.style.backgroundColor = `hsl(0, 0%, ${100 - darkness}%)`;
+    }
+}
 
 
 //Creates 16x16 Grid (Default)
@@ -26,7 +39,7 @@ sketchPad.appendChild(square);
 
 //Primary Color
 square.addEventListener('mouseover',()=>{
-    square.style.backgroundColor = "#FDCEDF";
+    square.style.backgroundColor = "#000000";
 });
 
 //Reset Button
@@ -34,7 +47,7 @@ resetButton.addEventListener('click', ()=>{
     square.style.backgroundColor = "White";
     //Primary Color
     square.addEventListener('mouseover',()=>{
-        square.style.backgroundColor = "#FDCEDF";
+        square.style.backgroundColor = "#000000";
     });
 });
 
@@ -50,6 +63,15 @@ colorFun.addEventListener('click', ()=>{
         square.style.backgroundColor = getRandomColor();
     });
 });
+
+//Darken Square Button
+darkenButton.addEventListener('click', () => {
+    square.style.backgroundColor = "White";
+    square.addEventListener('mouseover', ()=>{
+        square.style.backgroundColor = darkenSquare(square);
+    });
+});
+
 
 };
 
@@ -73,7 +95,7 @@ gridSize.addEventListener('click', ()=>{
 
         //Primary Color
         square.addEventListener('mouseover',()=>{
-            square.style.backgroundColor = "#FDCEDF";
+            square.style.backgroundColor = "#000000";
         });
 
         //Reset Button
@@ -81,15 +103,23 @@ gridSize.addEventListener('click', ()=>{
             square.style.backgroundColor = "White";
             //Primary Color
             square.addEventListener('mouseover',()=>{
-                square.style.backgroundColor = "#FDCEDF";
+                square.style.backgroundColor = "#000000";
             });
         });
-        
+
         //Color Fun Button
         colorFun.addEventListener('click', ()=>{
             square.style.backgroundColor = "White";
             square.addEventListener('mouseover', ()=>{
                 square.style.backgroundColor = getRandomColor();
+            });
+        });
+
+        //Darken Square Button
+        darkenButton.addEventListener('click', () => {
+            square.style.backgroundColor = "White";
+            square.addEventListener('mouseover', ()=>{
+                square.style.backgroundColor = darkenSquare(square);
             });
         });
 
