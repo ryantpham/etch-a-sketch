@@ -1,0 +1,41 @@
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 80px;
+    margin: 12px;
+    text-align: center; /* Centers the heading */
+    color: #333; /* Gives the text a dark color for better visibility */
+    font-family: 'Arial', sans-serif; /* Uses a more stylish font */
+    text-shadow: 2px 2px 4px #888; /* Adds a subtle shadow for a 3D effect */
+    letter-spacing: 1.5px; /* Increases letter spacing for a more elegant look */
+}
+
+.square{
+    background-color:white;
+    border: solid 1px black;
+}
+
+.square:hover{
+    background-color: red;
+}
+
+.container{
+    width: 500px;
+    height: 500px;
+    padding: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.container div {
+    flex: 0 0 calc(100% / 16); /* Each square takes up 1/16th of the container's width */
+    height: calc(500px / 16); /* Each square has a height of 1/16th of the container's height */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
