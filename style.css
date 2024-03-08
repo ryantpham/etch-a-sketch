@@ -5,7 +5,6 @@ body{
     justify-content: center;
     background-color: #F5E8DD;
     background: linear-gradient(to right, #f6d8d5, #F5E8DD); /* Gradient from soft pink to light beige */
-    
 
 }
 h1 {
@@ -211,13 +210,20 @@ h1 {
         align-items: stretch; /* Stretch elements to fit container */
     }
 
-    .container {
-        width: 100%; /* Full width of the screen */
-        height: auto; /* Height adjusted automatically */
+    .content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .container{
+        width: 100%;
+        height: fit-content;
     }
 
     .square {
-        flex-grow: 1; /* Squares expand to fill available space */
+        flex: 0 0 calc(100% / 16); /* Adjust this value based on the number of squares per row */
+        height: calc(100vw/ 16);
     }
 
     .features {
