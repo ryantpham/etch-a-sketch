@@ -4,6 +4,9 @@ body{
     flex-direction: column;
     justify-content: center;
     background-color: #F5E8DD;
+    background: linear-gradient(to right, #f6d8d5, #F5E8DD); /* Gradient from soft pink to light beige */
+    
+
 }
 h1 {
     font-size: 80px;
@@ -13,11 +16,23 @@ h1 {
     font-family: 'Arial', sans-serif; /* Uses a more stylish font */
     text-shadow: 2px 2px 4px #888; /* Adds a subtle shadow for a 3D effect */
     letter-spacing: 1.5px; /* Increases letter spacing for a more elegant look */
+    animation: breathe 3s ease-in-out infinite; /* Apply the breathing animation */
+
+}
+
+@keyframes breathe {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
 }
 
 .parentContent{
     display: flex;
     justify-content: center;
+    padding-top: 11px;
 }
 
 .content{
@@ -167,4 +182,15 @@ h1 {
 .eraser:focus {
     outline: none; /* Removes the focus outline */
     box-shadow: 0 0 0 2px rgba(250, 217, 213, 0.5); /* Adds a subtle focus effect with a matching glow */
+}
+
+/*Adds Animation when hovering over buttons*/
+.features button {
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition for transform and shadow */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Initial subtle shadow */
+}
+
+.features button:hover {
+    transform: translateY(-3px); /* Slightly raise the button on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Increase shadow for depth effect */
 }
