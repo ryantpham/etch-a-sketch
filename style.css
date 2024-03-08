@@ -194,3 +194,39 @@ h1 {
     transform: translateY(-3px); /* Slightly raise the button on hover */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Increase shadow for depth effect */
 }
+
+@media (max-width: 600px) {
+    body {
+        background-color: #F5E8DD; /* Solid color background for mobile */
+        padding: 5px; /* Reduced padding */
+    }
+
+    h1 {
+        font-size: 50px; /* Adjusted font size for smaller screens */
+        margin: 10px 0; /* Adjusted margin */
+    }
+
+    .parentContent, .content {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: stretch; /* Stretch elements to fit container */
+    }
+
+    .container {
+        width: 100%; /* Full width of the screen */
+        height: auto; /* Height adjusted automatically */
+    }
+
+    .square {
+        flex-grow: 1; /* Squares expand to fill available space */
+    }
+
+    .features {
+        flex-wrap: wrap; /* Wrap buttons if needed */
+    }
+
+    .features button {
+        flex-grow: 1; /* Buttons expand to fill available space */
+        margin: 5px; /* Add some margin around buttons */
+    }
+}
+
